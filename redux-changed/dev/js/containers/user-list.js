@@ -1,47 +1,59 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser, editUser, deleteUser } from '../actions/index'
+import { selectUser, showDetails,deleteUser } from '../actions/index'
 
 
 class UserList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newSel: {}
+            newUser: {}
         };
     }
-
-    select(user) {
-        this.state.newSel = user;
-        this.setState({
-            newSel: this.state.newSel
-        });
-        console.log(this.state.newSel);
+    userSelect(user) {
+        this.state.newUser = user;
+        this.setState({ newUser: this.state.newUser });
     }
-
+    editUser(newUser) {
+        this.props.showDetails(2);
+        this.props.selectUser(newUser);
+    }
+    addUser() {
+        this.props.showDetails(1);
+    }
+    deleteUser(deleteUser)
+    {
+        this.props.deleteUser(deleteUser);
+        this.props.showDetails(0);
+    }
+    viewUser(editUser)
+    {
+        this.props.selectUser(editUser);
+        this.props.showDetails(3);  
+    }
     renderList() {
-        return (this.props.users.map((user) => {
-            return (<div>
-
-                <input value={user.id} type="radio" onClick={this.select.bind(this, user)} />
-                {user.first}, {user.last}, {user.age}, {user.description}
-
-            </div>
+        return this.props.users.map((user) => {
+            return (
+                <div key={user.id}>
+                    <input value={user.id} type="radio" onClick={this.userSelect.bind(this, user)} ></input>
+                    {user.first}{user.last} {user.age}
+                </div>
             );
-        }));
+        });
     }
 
     render() {
-        console.log("userlist---render");
         return (
-            <ul>
-                {this.renderList()}
-                <button>add</button>
-                <button>view</button>
-                <button onClick={() => { this.props.deleteUser(this.state.newSel) }}>delete</button>
-                <button onClick={() => { this.props.selectUser(this.state.newSel) }}>edit</button>
-            </ul>
+            <div>
+                <ul>
+                    {this.renderList()}
+                </ul>
+                <button onClick={this.addUser.bind(this)}> add  </button>
+                <button onClick={this.editUser.bind(this, this.state.newUser)}> edit </button>
+                <button onClick={this.viewUser.bind(this, this.state.newUser)}> view </button>
+                <button onClick={this.deleteUser.bind(this, this.state.newUser)}> delete </button>
+            </div>
         );
     }
 
@@ -58,7 +70,7 @@ function mapStateToProps(state) {
 // Get actions and pass them as props to to UserList
 //      > now UserList has this.props.selectUser
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ selectUser: selectUser, deleteUser: deleteUser }, dispatch);
+    return bindActionCreators({ selectUser: selectUser, showDetails: showDetails,deleteUser:deleteUser }, dispatch);
 }
 
 // We don't want to return the plain UserList (component) anymore, we want to return the smart Container

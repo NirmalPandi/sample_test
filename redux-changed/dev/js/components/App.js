@@ -1,17 +1,32 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import UserList from '../containers/user-list';
-import UserDetail from '../containers/user-detail';
+import EditUser from '../containers/user-edit';
+import AddUser from '../containers/user-add';
+import ViewUser from '../containers/user-view';
+import { connect } from 'react-redux';
 
-
-const App = () => (
+class App extends Component{
+    render(){
+        return(
     <div>
-        <h2>User List</h2>
+        <h1>Employee List...</h1>
         <UserList />
-        <hr />
-        <h2>User Details</h2>
-        <UserDetail />
-        
+        {this.props.showContent.showContent==2 ? <div>
+        <EditUser /></div>:null}
+        {this.props.showContent.showContent==1 ? <div>
+        <AddUser /></div>:null}
+        {this.props.showContent.showContent==3 ? <div>
+        <ViewUser/></div>:null}
     </div>
-);
+);}}
 
-export default App;
+
+
+function mapStateToProps(state) {
+    return {
+        
+        showContent:state.showContent
+    };
+}
+
+export default connect(mapStateToProps)(App);

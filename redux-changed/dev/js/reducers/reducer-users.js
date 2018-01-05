@@ -1,18 +1,18 @@
-export default function (state = data, action = {}) {
+export default function (state = data, action) {
     switch (action.type) {
-       
         case "modify":
             return state.map((n) => {
                 if (n.id == action.payload.id) {
-                    console.log(action.payload);
                     return action.payload;
                 }
                 return n;
             });
-        case "USER_DELETED":
-        return state.filter(user=>user.id!=action.payload.id);
-        default: return state;
-
+        case "add":
+            return [...state, action.payload];     
+case "DELETE":
+return state.filter(eachstatevalue => { return eachstatevalue.id != action.payload.id })
+        default: 
+            return state;
     }
 }
 
