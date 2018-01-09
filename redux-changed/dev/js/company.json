@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "address": "porur",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "name": "partha1",
+      "id": 1
+    }
+  ]
+}

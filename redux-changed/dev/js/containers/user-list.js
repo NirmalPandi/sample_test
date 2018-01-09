@@ -16,11 +16,12 @@ class UserList extends Component {
         this.setState({ newUser: this.state.newUser });
     }
     editUser(newUser) {
-        this.props.showDetails(2);
         this.props.selectUser(newUser);
+        this.props.showDetails(2);
     }
     addUser() {
         this.props.showDetails(1);
+       
     }
     deleteUser(deleteUser)
     {
@@ -33,6 +34,8 @@ class UserList extends Component {
         this.props.showDetails(3);  
     }
     renderList() {
+
+        console.log("props contenttttttt",this.props.user);
         return this.props.users.map((user) => {
             return (
                 <div key={user.id}>

@@ -8,7 +8,7 @@ class UserDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newUser: {},
+            newUser:this.props.user
         };
     }
 
