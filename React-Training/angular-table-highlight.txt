@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+.selected {
+   background-color:black;
+   color:white;
+   font-weight:bold;
+}
+</style>
+
+</head>
+
+
+
+<body ng-app="foodApp" ng-controller="foodCtrl">
+       <table class="table table-bordered" >
+           <tr>
+               <th>#</th>
+               <th>Name</th>
+               <th>Price</th>
+               <th>Quantity</th>
+           </tr>
+           <tr ng-repeat="item in foodItems" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index)">
+              <td>{{$index}}</td>
+               <td>{{item.name}}</td>
+               <td>{{item.price}}</td>
+               <td>{{item.quantity}}</td>
+           </tr>
+       </table>
+   
+  
+
+
+<script>
+var foodApp = angular.module('foodApp',[]);
+foodApp.controller('foodCtrl',function($scope){
+   $scope.foodItems = [{
+       name:'Noodles',
+       price:'10',
+       quantity:'1'
+   },
+   {
+       name:'Pasta',
+       price:'20',
+       quantity:'2'
+   },
+   {
+       name:'Pizza',
+       price:'30',
+       quantity:'1'
+   },
+   {
+       name:'Chicken tikka',
+       price:'100',
+       quantity:'1'
+   }];
+   $scope.selectedRow = null;  
+ $scope.setClickedRow = function(index){  
+    $scope.selectedRow = index;
+ };
+});
+</script>
+
+</body>
+</html>
