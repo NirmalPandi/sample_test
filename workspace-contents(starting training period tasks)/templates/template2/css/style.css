@@ -1,0 +1,153 @@
+header,footer{
+	width:900px;
+	height:150px;
+	background-color:white;
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+    text-indent: 20px;
+    font-weight: bold;
+    position: relative;
+
+}
+.main{
+	width: 900px;
+	height: 500px;
+	background-color:white;
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	padding: -10px;
+
+
+}
+.box1{
+	width: 860px;
+	height: 200px;
+	position: absolute;
+	display: inline-block;
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	margin-top: 5px;
+	margin-left: 20px;
+
+}
+.box2{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	float: left;
+	width: 275px;
+	height: 250px;
+	margin-top: 220px;
+	margin-left: 20px;
+	position: absolute;
+
+}
+.box3{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	float: center;
+	width: 275px;
+	height: 250px;
+	margin-left: 313px;
+	margin-top: 220px;
+	position: absolute;
+}
+.box4{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	float: right;
+	width: 275px;
+	height: 250px;
+    margin-right: 20px;
+	position: absolute;
+	margin-top: 220px;
+	margin-left: 605px;
+	
+
+
+}
+
+
+
+
+.content
+{
+	margin-left: 20px;
+	font-weight: bold;
+}
+.logo{
+	width: 250px;
+	height: 90px;
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	position: absolute;
+	margin-top: -15px;
+	margin-left: 20px;
+	float: left;
+}
+.nav{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	position: absolute;
+	margin-left: 290px;
+	height: 50px;
+	width: 590px;
+    float: right;
+    margin-top: 25px;
+}
+
+.box5{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	position: absolute;
+	margin-left: 20px;
+	width: 275px;
+	height: 100px;
+	margin-top: -10px;
+
+}
+.box6{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	position: absolute;
+	margin-left: 315px;
+	width: 275px;
+	height: 100px;
+		margin-top: -10px;
+
+	
+}
+.box7{
+	border-width: 1px;
+	border-color: red;
+	border-style: solid;
+	position: absolute;
+	margin-left: 605px;
+	width: 275px;
+	height: 100px;
+	margin-top: -10px;
+}
+
+.topic
+{
+	margin-left: -10px;
+	margin-top: 5px;
+}
+.topic1{
+	position: absolute;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 10px;
+}

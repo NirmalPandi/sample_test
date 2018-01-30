@@ -1,0 +1,78 @@
+.heading{
+	font-size: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-family:sans-serif;
+	color:black;
+	margin-left: 7px;
+
+
+}
+.check{
+	font-size: 20px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left: 7px;
+
+
+}
+.radio{
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: -0.5em;
+	margin-left: 7px;
+
+}
+.c_box{
+	margin-bottom: 10px;
+	margin-left: 7px;
+
+
+}
+.main{
+	
+margin-left: 450px;
+}
+
+.button{
+background-color: #555555;
+width: 450px;
+height: 50px;
+ border: none;
+    color: white;
+     text-align: center;
+    text-decoration: none;
+      font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 7px;
+  
+
+}
+
+
+input[type=checkbox]{
+-webkit-appearance: initial;
+border: 3px solid black;
+border-radius:20%;
+width: 16px;
+    height: 18px;
+    vertical-align:top;   
+}
+input[type=checkbox]:checked:after {
+ content: " \2714";
+ position: absolute;
+   color: black;
+}
+input[type=radio] {
+      -webkit-appearance: none;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      outline: none;
+      border: 3px solid black;
+      vertical-align:top;
+  }
+input[type=radio]:checked {
+ background-color:blue;
+}

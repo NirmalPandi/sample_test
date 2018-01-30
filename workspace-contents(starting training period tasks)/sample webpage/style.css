@@ -1,0 +1,39 @@
+#header,#footer{
+	background-color: black;
+	height:9%;
+	color:red;
+	font-family: fantasy; 
+	font-size: 25px;
+	 margin: 5px;
+
+
+}
+#content {
+    margin: 5px;
+    padding: 10px;
+    background-color:#757272;
+    height: 80%;
+
+}
+
+    
+.article {
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    height:40%;
+    font-size: 23px;
+
+}
+
+#menu ul {
+    padding: 0;
+    font-size: 20px;
+    font-family: impact;
+    color: black;
+}
+
+#menu ul li {
+    display: inline;
+    margin: 5px;
+}

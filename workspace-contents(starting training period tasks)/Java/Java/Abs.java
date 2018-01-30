@@ -1,0 +1,23 @@
+package Java;
+
+abstract class A{
+	 A(){
+		System.out.println("\u0000");
+	}
+	abstract void sample();
+}
+
+class B extends A{
+	void sample(){
+		System.out.println("Abstract class is implemented");
+		
+	}
+}
+public class Abs {
+	public static void main(String args[]){
+		A obj=new B();
+		obj.sample();
+		
+	}
+
+}

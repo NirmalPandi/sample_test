@@ -1,0 +1,61 @@
+.head{
+	border:solid 1px white;
+	display: inline block;
+position: relative;
+	background-color: black;
+}
+	@media only screen and (min-width:0px) and (max-width:426px){
+		.head{
+			height:255px;
+	}
+}
+
+@media only screen and (min-width:0px) and (max-width:426px){
+		.btn-group{
+			width: 100%;
+	}
+}
+
+
+
+.glyphicon-user{
+	font-size: 30px;
+	float: left;
+}
+
+.btn-lg{
+height: 35px;
+float: left;
+text-align: center;
+ line-height:0px;
+
+}
+
+}
+ .content{
+ 	border:solid 1px red;
+ 	background-color:black;
+
+ }
+
+ .foot{
+	border:solid 1px white;
+	display: inline block;
+	background-color: black;
+
+}
+ .end{
+background-color: black;
+}
+.end1{
+	margin-left: 500px;
+}
+.side{
+	margin-top: 10px;
+	margin-left: 20px;
+
+}
+.progress
+{
+	height:20px;
+}
