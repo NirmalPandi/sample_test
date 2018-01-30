@@ -1,0 +1,33 @@
+[
+{
+   "ID": "Trichy-Salem-001",
+   "Name": "KPN-Travels",
+   "Type": "semi"
+},
+{
+    "ID": "Trichy-Salem-002",
+    "Name": "SRS-Travels",
+    "Type": "Berth"
+},
+{
+    "ID": "Trichy-Salem-003",
+    "Name": "SRM-Travels",
+    "Type": "semi"
+},
+{
+    "ID": "Trichy-Salem-004",
+    "Name": "SRS-Travels",
+    "Type": "Semi"
+},
+{
+    "ID": "Trichy-Salem-005",
+    "Name": "TAT-Travels",
+    "Type": "semi"
+},
+
+{
+    "ID": "Trichy-Salem-006",
+    "Name": "SRM-Travels",
+    "Type": "Berth"
+}
+]

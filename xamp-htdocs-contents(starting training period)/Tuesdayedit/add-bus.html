@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Add bus Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/add-bus.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+ <body>
+ <section class="container-fluid">
+ <h1 style="text-align:center">ADD-BUS</h1>
+<section   ng-controller="myCtrl1">
+<form class="form-horizontal" role="form" ng-submit="addRow()">
+ 
+
+<div class="row">
+    <label class="col-md-1 control-label">FROM</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" name="name"
+        ng-model="from" />
+    </div>
+
+    <label class="col-md-1 control-label">TO</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" name="employees"
+        ng-model="to" />
+        </div>
+  
+    <label class="col-md-1 control-label">NAME</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" name="name" placeholder="Enter the bus name"
+        ng-model="name" />
+    </div>
+</div>
+
+<div class="row">
+  <label class="col-md-1 control-label">DATE</label>
+        <p class="input-group col-md-3">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="datePickerOpen=true"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          <input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="travelDate" is-open="datePickerOpen" min-date="" max-date="" ng-required="true" close-text="Done"/>
+        </p>
+
+      <div class="submit">                
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+      </div>
+
+</div>
+</form>
+
+<div id="myc">
+ <table class="table">
+  <tr>
+  <th>BUS_ID
+    </th>
+    <th>BUS_NAME
+    </th>
+    <th>FROM
+    </th>
+    <th>TO
+    </th>
+    <th>DATE
+    </th>
+  </tr>
+  <tr ng-repeat="company in companies">
+  <td>{{company.BUS_ID}}
+    </td>
+    <td>{{company.NAME}}
+    </td>
+    <td>{{company.FROM}}
+    </td>
+    <td>{{company.TO}}
+    </td>
+    <td>{{company.DATE | date:'shortDate'}}
+    </td>
+  </tr>
+</table>
+  
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+</section>
+ </body>
+ </html>
+
+
+
+
+

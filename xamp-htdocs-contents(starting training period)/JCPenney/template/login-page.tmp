@@ -1,0 +1,5 @@
+<div class="login-page">
+	<h2></h2>
+	<widget:header></widget:header>
+	<widget:login-form></widget:login-form>
+</div>

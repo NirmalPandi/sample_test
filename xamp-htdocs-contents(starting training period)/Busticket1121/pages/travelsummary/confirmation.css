@@ -1,0 +1,53 @@
+.confirm-color{
+    background-color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.confirmation_summary
+{
+	padding-top: 5px;
+    background-color: #4d80b3;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+     border: 3px solid #fff;
+}
+
+.confirmation_summary_ps
+{
+	 font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+
+    
+ }
+ .confirmation_travel_head
+ {
+ 	 font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+     background-color:  #b8cce0;
+      border: 3px solid #fff;
+ }
+  .confirmation_travel_data
+ {
+ 	 font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+     background-color:#edf2f7;
+     border: 3px solid #fff;
+ }
+ .confirm_seats_bg
+ {
+    background-color: #7099c2; 
+     font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: bold; 
+   
+ }
+ .confirm_seats_bg th
+ {
+     width: 400px;
+ }

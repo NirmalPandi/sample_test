@@ -1,0 +1,66 @@
+<section class="container">
+<div ng-controller="searchresultsctrl">
+<section class="col-lg-10 col-lg-offset-1">
+    <form>
+    <div class="form-group">
+      <div class="input-group">
+       Search:
+        <input type="text" class="form-control" ng-model="searchall"/>
+      </div>      
+    </div>
+  </form>
+
+
+
+Bus Operator: <select name="styleSelect" id="styleSelect" ng-options="option for option in model.options.busoperator" ng-model="model.filterObject.operator"></select>
+  
+Bus Type: <select name="levelSelect" id="levelSelect" ng-options="option for option in model.options.bustypes" ng-model="model.filterObject.bustype"></select>
+
+
+
+
+
+
+
+  <table class="table table-striped table-dark">
+  <tr>
+  <th scope="col"><a href="#" ng-click="sortType = 'busid'; sortReverse = !sortReverse">Bus ID</a>
+
+ </th>
+  <th scope="col"><a href="#" ng-click="sortType = 'bustype'; sortReverse = !sortReverse">Bus Type</a>
+
+  </th>
+  <th scope="col"><a href="#" ng-click="sortType = 'operator'; sortReverse = !sortReverse">Operator</a>
+  
+  </th>
+  <th scope="col"><a href="#" ng-click="sortType = 'from'; sortReverse = !sortReverse">From</a>
+
+  </th>
+  <th scope="col"><a href="#" ng-click="sortType = 'to'; sortReverse = !sortReverse">To</a>
+ 
+  </th>
+  <th scope="col">Select</a>
+  </th>
+  </tr>
+  <tr ng-repeat="record in model.data |  orderBy:sortType:sortReverse | filter:model.filterObject | filter:searchall ">
+     <td><a href="#" ng-click="showDetails(record)">{{record.busid}}</a></td>
+     <td>{{record.bustype}}</td> 
+     <td>{{record.operator}}</td>
+     <td>{{record.from}}</td>
+          <td>{{record.to}}</td>
+     <td><button class="button button-block">   
+          View Seats</button>
+     </td>
+     </tr>  
+  </table>
+
+
+
+
+</section>
+
+  <a href="#!/confirmationnew"><button class="button button-block">View Seats</button></a>
+</div>
+  
+</section>
+

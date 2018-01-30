@@ -1,0 +1,67 @@
+
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border: none;
+      border-radius: 0px;
+      background-color:rgba(229,87,55,0.9);
+       top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+  .navbar-inverse .navbar-nav>li>a{
+color:#ffffff;
+  }
+   .navbar-inverse .navbar-nav>li>a:hover{
+color:#000000;
+  }
+
+    .navbar-brand{
+      display: inline-block;
+      padding: 0px;
+     margin-top: 0px;
+    
+    }
+    .logo{
+      margin-top: -25px;
+
+    }
+    .navbar>.container-fluid .navbar-brand{
+      margin-left: 0px;
+    }
+
+    .form-align{
+      margin-top:60px;
+    }
+#wrapper {
+  font: 20px Calibri;
+  width: 100px;
+  margin: 0 auto;
+}
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+     background-color:rgba(229,87,55,0.9);
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  bottom:0px;
+        text-align: center;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+.carousel-align{
+  top:50px;
+}
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }

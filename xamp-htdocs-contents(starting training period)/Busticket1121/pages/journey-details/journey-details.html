@@ -1,0 +1,143 @@
+
+
+
+<section ng-controller="journeyctrl">
+
+<section class="row one">
+
+<section>
+<section class="col-lg-2">
+<div class="form-group">
+  <label class="heading">From:</label>
+  
+ <div>
+    <select id="datepick" ng-model="From" ng-init="From='000'" ng-change="selectChange()" class="ui dropdown">
+        <option value="00">--select--</option>
+        <option value="11">Chennai</option>
+        <option value="12">Coimbatore</option>
+        <option value="13">Trichy</option>
+        <option value="14">Salem</option>
+         <option value="15">Madurai</option>
+    </select>
+ </div>
+ </div>
+</section>
+<section class="col-lg-2">
+<div class="form-group">
+  <label class="heading">To:</label>
+  <div>
+   <select ng-model="To" id="datepick" class="ui dropdown">
+	<option>--select--</option>
+	<option  value="11" ng-disabled="disableInputs1">Chennai</option>
+	<option  value="12" ng-disabled="disableInputs2">Coimbatore</option>
+	<option  value="13" ng-disabled="disableInputs3">Trichy</option>
+	<option  value="14" ng-disabled="disableInputs4">Salem</option>
+  <option  value="15" ng-disabled="disableInputs5">Madurai</option>
+  </select>
+</div>
+</div>
+</section>
+
+
+<section class="col-lg-3">
+<label class="heading">Onward Date</label>
+<div class="form-group">
+  <div class='input-group'>
+      <input type='text' class="form-control date-text" 
+             datepicker-popup
+             ng-model="model.startDate"
+             is-open="opened.start" 
+             ng-click="opened.start = !opened.start" 
+             ng-readonly='true'
+			 min-date="today"/>
+      <span class="input-group-addon date-text" for='start' 
+            ng-click="opened.start = !opened.start; $event.stopPropagation()">
+          <i class="glyphicon glyphicon-calendar"></i>
+      </span>
+  </div>
+</div>
+</section>
+
+<section class="col-lg-3">
+ <label class="heading">Return Date</label>
+ <div class="form-group">
+ <div class='input-group'>
+ <input type='text' 
+class="form-control date-text" 
+datepicker-popup
+ng-model="model.endDate" 
+is-open="opened.end" 
+min-date="model.startDate"
+ng-click="opened.end = !opened.end"
+ng-readonly='true'/>
+ <span class="input-group-addon date-text" 
+ng-click="opened.end = !opened.end;  $event.stopPropagation()">
+ <span class="glyphicon glyphicon-calendar extern-dateicon"></span>
+ </span>
+ </div>
+</div>
+</section>
+
+<section class="col-lg-2">
+<button type="button" class="search-bus"  ng-click="ButtonClick()"><label class="search">Search Bus</label></button>
+</section>
+ 
+  
+</section>
+</section>
+
+
+<form>
+    <div class="form-group">
+      <div class="input-group">
+       Search:
+        <input type="text" class="form-control" ng-model="searchall">
+      </div>      
+    </div>
+  </form>
+
+
+
+
+
+
+<section class="container">
+<table class="table" ng-hide="hide_search_tab">
+Bus Operator: <select name="styleSelect" id="styleSelect" ng-options="option for option in model.options.busoperator" ng-model="model.filterObject.Name"></select>
+  
+Bus Type: <select name="levelSelect" id="levelSelect" ng-options="option for option in model.options.bustypes" ng-model="model.filterObject.Type"></select>
+  <tr>
+  <th>BUS_ID
+    </th>
+    <th>BUS_NAME
+    </th>
+    <th>TYPE
+    </th>
+    
+  </tr>
+  ONWARD DATE
+  <tr ng-repeat="birds in list | orderBy:sortType:sortReverse | filter:model.filterObject | filter:searchall">
+  <td>{{birds.ID}}
+    </td>
+    <td>{{birds.Name}}
+    </td>
+    <td>{{birds.Type}}
+    </td>
+    
+  </tr>
+RETURN DATE
+<tr ng-repeat="bird in newlist | orderBy:sortType:sortReverse | filter:model.filterObject | filter:searchall">
+  <td>{{bird.ID}}
+    </td>
+    <td>{{bird.Name}}
+    </td>
+    <td>{{bird.Type}}
+    </td>
+    
+  </tr>
+
+
+</table>
+</section>
+
+</section>

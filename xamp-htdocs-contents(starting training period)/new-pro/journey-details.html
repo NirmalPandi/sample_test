@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>Journey details</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    
+
+ <link rel="stylesheet" href="journey-details.css">
+  <link rel="stylesheet" href="journey-details.js">
+
+
+ </head>
+
+ <body ng-app="ui.bootstrap.demo">
+
+ <section class="container">
+
+ <Section class="row one">
+ 	<section class="col-lg-3">
+ 		<div class="form-group">
+  <label>Chennai:</label>
+  <select class="form-control"  name="dropdown1">
+  	<option></option>
+    <option>Chennai</option>
+    <option>Coimbatore</option>
+    <option>Trichy</option>
+    <option>Salem</option>
+  </select>
+		</div>
+ 	</section>
+ 	<section class="col-lg-3">
+ 		<div class="form-group">
+  <label>To:</label>
+  <select class="form-control"  name="dropdown2">
+  	<option></option>
+    <option>Chennai</option>
+    <option>Coimbatore</option>
+    <option>Trichy</option>
+    <option>Salem</option>
+  </select>
+		</div>
+ 	</section>
+ 	
+ 	
+ <section class="col-lg-3">        		
+<div class=" form-group row">   
+    
+                  <label for="ex2">Onward Date:</label>    
+            
+            <div ng-controller="DatepickerPopupDemoCtrl">
+	 <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+    </div>
+
+                </div>
+               
+
+ 	</section>
+ 	<section class="col-lg-3"></section>
+ </Section>
+
+
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </body>
+
+ </html>

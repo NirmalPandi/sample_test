@@ -1,0 +1,33 @@
+[
+{
+   "ID": "Coimb-chn-001",
+   "Name": "KPN-Travels",
+   "Type": "semi"
+},
+{
+    "ID": "Coimb-chn-002",
+    "Name": "SRS-Travels",
+    "Type": "Berth"
+},
+{
+    "ID": "Coimb-chn-003",
+    "Name": "SRM-Travels",
+    "Type": "semi"
+},
+{
+    "ID": "Coimb-chn-004",
+    "Name": "SRS-Travels",
+    "Type": "Semi"
+},
+{
+    "ID": "Coimb-chn-005",
+    "Name": "TAT-Travels",
+    "Type": "semi"
+},
+
+{
+    "ID": "Coimb-chn-006",
+    "Name": "SRM-Travels",
+    "Type": "Berth"
+}
+]

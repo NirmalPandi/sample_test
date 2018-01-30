@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<titl></title>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+ body {
+    background-image: url("../images/sample.jpg");
+    min-height: 10%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<input type="submit" value="login" id="login">
+  </body>
+</html>

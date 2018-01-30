@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/angular-date-picker.css">
+<link rel="stylesheet" href="css/crud.css">
+
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="js/angular-date-picker.js"></script> 
+<script src="crud.js"></script>
+<body  ng-app="MyApp" >
+  <div class="container">
+    <section ng-controller="TabController as tab">
+        <ul class="nav nav-pills crud_tab">
+            <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">ADD-DELETE-EDIT BUS</a></li>
+            <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">VIEW REPORTS</a></li>
+       </ul>
+        
+        <div ng-show="tab.isSet(1)">
+                 
+
+	<div class="container crud_bg" ng-controller="Adminbus">
+<button class="btn btn-primary crud_button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+ADD BUS
+</button>
+        <section class="col-lg-offset-3 col-lg-6 col-lg-offset-3">
+<div class="collapse" id="collapseExample">
+  <div class="well crud_headadd">
+   <table class="table table-bordered">
+       
+         <tr>
+            <td >BUS ID</td>
+            <td>
+                <input type="text" class="form-control" ng-model="bus.id" /></td>
+        </tr>
+        <tr>
+            <td>OPERATOR NAME</td>
+            <td>
+				<select class="form-control" ng-model="bus.operator"><option ng-repeat="x in names">{{x}}</option></select>
+			</td>
+        </tr>
+        <tr>
+            <td>FROM LOCATION</td>
+            <td>
+			<select class="form-control" ng-model="bus.floc"><option ng-repeat="x in floc">{{x}}</option></select>
+         </td>
+        </tr>
+        <tr>
+            <td>TO LOCATION</td>
+            <td>
+			<select class="form-control" ng-model="bus.tloc"><option ng-repeat="x in tloc">{{x}}</option></select>
+            </td>   
+        </tr>
+        <tr>
+            <td>BUS TYPE</td>
+            <td>
+			<select class="form-control" ng-model="bus.type"><option ng-repeat="x in btype">{{x}}</option></select>
+    		</td>
+        </tr>
+        <tr>
+            <td>BUS DEPT TIME</td>
+            <td>
+
+                <input type="text" class="form-control" placeholder="24 hrs format(06:00)" ng-model="bus.dtime" /></td>
+        </tr>
+         <tr>
+            <td>BUS ARRIVAL TIME</td>
+            <td>
+
+                <input type="text" class="form-control" placeholder="24 hrs format(22:00)" ng-model="bus.atime" /></td>
+        </tr>
+         <tr>
+            <td>CREATED DATE</td>
+            <td>
+               <span ng-show="edit" ng-click="edit=false"><date-picker ng-model="bus.cdate"></date-picker></span>
+                <input type="text" class="form-control" ng-click="edit=true" ng-model="bus.cdate">
+			
+               </td>
+        </tr>
+         <tr>
+            <td>OPERATING DATE</td>
+            <td>
+                 <span ng-show="editt" ng-click="editt=false"><date-picker ng-model="bus.odate"></date-picker></span>
+                <input type="text" class="form-control" ng-click="editt=true" ng-model="bus.odate">
+                              
+        </tr>
+            
+            <tr>
+            <td class="text-right" colspan="2">
+               <span ng-click="addmode=false">  <button ng-click="addbus(bus)" class="btn btn-primary">
+                    Add
+                </button></span>
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+</section>
+    <table class="table table-bordered crud_head">
+        <thead>
+            <tr>
+                <th>BUS ID</th>
+                <th>OPERATOR NAME</th>
+                <th>FROM LOCATION</th>
+                <th>TO LOCATION</th>
+                <th>BUS TYPE</th>
+                <th>BUS DEPT TIME</th>
+                <th>BUS ARRIVAL TIME</th>
+                <th>CREATED DATE</th>
+                <th>OPERATING DATE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+             </tr>
+        </thead>
+              <tbody>
+            <tr ng-repeat="bus in buss">
+                <td>
+                    <span ng-hide="editMode">{{bus.id}}</span>
+                     <input type="text" class="form-control" ng-show="editMode" ng-model="bus.id" /></td>
+               </td>
+                <td>
+                    <span ng-hide="editMode">{{bus.operator}}</span>
+                    <select class="form-control" ng-model="bus.operator" ng-show="editMode"><option ng-repeat="x in names">{{x}}</option></select>
+                  
+                </td>
+                <td>
+                    <span ng-hide="editMode">{{bus.floc}}</span>
+                    <select class="form-control" ng-show="editMode" ng-model="bus.floc"><option ng-repeat="x in floc">{{x}}</option>
+                    </select>
+                    
+                </td>
+                <td>
+                    <span ng-hide="editMode">{{bus.tloc}}</span>
+                    <select class="form-control"  ng-show="editMode" ng-model="bus.tloc"><option ng-repeat="x in tloc">{{x}}</option>
+                    </select>
+                   
+                </td>
+                  <td>
+                    <span ng-hide="editMode">{{bus.type}}</span>
+                    <select class="form-control" ng-show="editMode" ng-model="bus.type"><option ng-repeat="x in btype">{{x}}</option>
+                    </select>
+                 </td>
+                  <td>
+                    <span ng-hide="editMode">{{bus.dtime}}</span>
+                    <input type="text"  class="form-control"  ng-show="editMode" ng-model="bus.dtime" />
+                </td>
+                  <td>
+                    <span ng-hide="editMode">{{bus.atime}}</span>
+                    <input type="text"  class="form-control"  ng-show="editMode" ng-model="bus.atime" />
+                </td>
+                  <td>
+                    <span ng-hide="editMode">{{bus.cdate}}</span>
+                     <span ng-show="calendar" ng-click="calendar=false"><date-picker ng-model="bus.cdate"></date-picker></span>
+                    <input type="text" class="form-control" ng-show="editMode" ng-click="calendar=true" ng-model="bus.cdate">
+                </td>
+                  <td>
+                    <span ng-hide="editMode">{{bus.odate}}</span>
+                     <span ng-show="calendar1" ng-click="calendar1=false"><date-picker ng-model="bus.odate"></date-picker></span>
+                     <input type="text" class="form-control" ng-show="editMode" ng-click="calendar1=true" ng-model="bus.odate">
+                </td>
+                <td>
+                    <i ng-hide="editMode" ng-click="editMode = true; editbus(bus)" class="glyphicon glyphicon-edit"></i>
+                    <i class="glyphicon glyphicon-saved" ng-show="editMode" ng-click="editMode = false"></i>
+                </td>
+                <td>
+                    <i ng-click="removebus($index)" class="glyphicon glyphicon-trash"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> </div>
+ <div  ng-controller="Adminbus" ng-show="tab.isSet(2)">
+   <table class="table table-bordered crud_report">
+        <thead>
+            <tr>
+                <th>BUS ID</th>
+                <th>OPERATOR NAME</th>
+                <th>FROM LOCATION</th>
+                <th>TO LOCATION</th>
+                <th>BUS TYPE</th>
+                <th>BUS DEPT TIME</th>
+                <th>BUS ARRIVAL TIME</th>
+                <th>CREATED DATE</th>
+                <th>OPERATING DATE</th>
+            </tr>
+        </thead>
+              <tbody>
+            <tr ng-repeat="bus in buss">
+                <td>{{bus.id}}</td>              
+                <td>{{bus.operator}}</td>                                 
+                <td>{{bus.floc}}</td>                      
+                <td>{{bus.tloc}}</td>                   
+                <td>{{bus.type}}</td>                             
+                <td>{{bus.dtime}}</td>
+                <td>{{bus.atime}}</td>                  
+                <td>{{bus.cdate}}</td>     
+                <td>{{bus.odate}} </td>      
+                                       
+            </tr>
+        </tbody>
+    </table>
+             
+        </div>
+</section>
+</div>
+</body>
+</html>

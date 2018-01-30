@@ -1,0 +1,17 @@
+.head
+{
+	color:#fff;
+	background-color:rgba(13, 11, 142, 0.66);;
+	font-family:Arial;
+	text-align:center;
+	padding:20px 0px 20px 0px;;
+}
+a:focus, a:hover
+{
+	text-decoration:none;
+}
+.question
+{
+	font-weight:bold;
+}
+

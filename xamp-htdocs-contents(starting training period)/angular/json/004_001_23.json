@@ -1,0 +1,33 @@
+[
+{
+   "ID": "Salem-Chn-001",
+   "Name": "KPN-Travels",
+   "Type": "semi"
+},
+{
+    "ID": "Salem-Chn-002",
+    "Name": "SRS-Travels",
+    "Type": "Berth"
+},
+{
+    "ID": "Salem-Chn-003",
+    "Name": "SRM-Travels",
+    "Type": "semi"
+},
+{
+    "ID": "Salem-Chn-004",
+    "Name": "SRS-Travels",
+    "Type": "Semi"
+},
+{
+    "ID": "Salem-Chn-005",
+    "Name": "TAT-Travels",
+    "Type": "semi"
+},
+
+{
+    "ID": "Salem-Chn-006",
+    "Name": "SRM-Travels",
+    "Type": "Berth"
+}
+]

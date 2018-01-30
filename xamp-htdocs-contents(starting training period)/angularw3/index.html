@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+</head>
+<body ng-app="hello" ng-controller="httpctrl">
+<ul>
+<li ng-repeat="x in content">
+    {{ x.Name + ', ' + x.Country }}
+ </li>
+</ul>
+<script type="text/javascript">
+    var app = angular.module('hello', []);
+app.controller('httpctrl', function($scope, $http) {
+  $http({
+    method : "GET",
+    url : "json/sample.json"
+  }).then(function mySuccess(response) {
+      $scope.content = response.data.records;
+    }, function myError(response) {
+      $scope.content ="error";
+  });
+});
+</script>
+</body>
+</html>

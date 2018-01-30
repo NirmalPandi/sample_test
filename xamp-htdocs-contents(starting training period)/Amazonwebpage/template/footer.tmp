@@ -1,0 +1,11 @@
+<div class="footer">
+		<div>project name:</div><div id="project-name-value">{{projectName}}</div>
+		<div>project code:</div><div id="project-code-value">{{projectId}}</div>
+		<br>
+		{{#each surplusMembers}}
+			<div>firstname:{{firstName}}</div>
+			<div>lastname:{{lastName}}</div>
+			<br>
+		{{/each}}
+		<button id="g"> click here</button>
+</div>

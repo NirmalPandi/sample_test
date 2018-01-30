@@ -1,0 +1,134 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo" ng-controller="DatepickerPopupDemoCtrl">
+  <head>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>  
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="journey-details.js"></script>
+	<link rel="stylesheet" href="journey-details.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	
+	</head>
+  <body>
+
+<section class="container">
+
+
+
+<section class="row one">
+
+<section>
+<section class="col-lg-2">
+<div class="form-group">
+  <label class="heading">From:</label>
+  
+ <div>
+    <select id="datepick" ng-model="From" ng-init="From='000'" ng-change="selectChange()" class="ui dropdown">
+        <option value="000">--select--</option>
+        <option value="001">Chennai</option>
+        <option value="002">Coimbatore</option>
+        <option value="003">Trichy</option>
+        <option value="004">Salem</option>
+    </select>
+ </div>
+ </div>
+</section>
+
+<section class="col-lg-2">
+<div class="form-group">
+  <label class="heading">To:</label>
+  <div>
+   <select ng-model="To" id="datepick" class="ui dropdown">
+	<option>--select--</option>
+	<option  value="001" ng-disabled="disableInputs1">Chennai</option>
+	<option  value="002" ng-disabled="disableInputs2">Coimbatore</option>
+	<option  value="003" ng-disabled="disableInputs3">Trichy</option>
+	<option  value="004" ng-disabled="disableInputs4">Salem</option>
+  </select>
+</div>
+</div>
+</section>
+
+
+<section class="col-lg-3">
+<label class="heading">Onward Date</label>
+<div class="form-group">
+  <div class='input-group'>
+      <input type='text' class="form-control date-text" 
+             datepicker-popup
+             ng-model="model.startDate"
+             is-open="opened.start" 
+             ng-click="opened.start = !opened.start" 
+             ng-readonly='true'
+			 min-date="today"/>
+      <span class="input-group-addon date-text" for='start' 
+            ng-click="opened.start = !opened.start; $event.stopPropagation()">
+          <i class="glyphicon glyphicon-calendar"></i>
+      </span>
+  </div>
+</div>
+</section>
+
+<section class="col-lg-3">
+ <label class="heading">Return Date</label>
+ <div class="form-group">
+ <div class='input-group'>
+ <input type='text' 
+class="form-control date-text" 
+datepicker-popup
+ng-model="model.endDate" 
+is-open="opened.end" 
+min-date="model.startDate"
+ng-click="opened.end = !opened.end"
+ng-readonly='true'/>
+ <span class="input-group-addon date-text" 
+ng-click="opened.end = !opened.end;  $event.stopPropagation()">
+ <span class="glyphicon glyphicon-calendar extern-dateicon"></span>
+ </span>
+ </div>
+</div>
+</section>
+
+<section class="col-lg-2">
+<button type="button" class="search-bus"  ng-click="ButtonClick()"><label class="search">Search Bus<label></button>
+</section>
+ 
+  
+</section>
+</section>
+</section>
+
+
+
+<section class="container">
+<table class="table" ng-hide="hide_search_tab">
+  <tr>
+  <th>BUS_ID
+    </th>
+    <th>BUS_NAME
+    </th>
+    <th>TYPE
+    </th>
+    
+  </tr>
+  <tr ng-repeat="birds in list">
+  <td>{{birds.ID}}
+    </td>
+    <td>{{birds.Name}}
+    </td>
+    <td>{{birds.Type}}
+    </td>
+    
+  </tr>
+</table>
+</section>
+  
+  </body>
+</html>

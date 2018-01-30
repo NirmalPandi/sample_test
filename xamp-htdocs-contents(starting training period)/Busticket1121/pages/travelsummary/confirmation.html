@@ -1,0 +1,100 @@
+
+
+	<section class="container confirm-color" ng-controller="confirmationctrl">
+        <p class="confirmation_summary_ps">Your Journey has been confirmed!!!</p>
+        <section class="confirmation_summary">
+            <p>Travel summary</p>
+        </section>
+    <section>
+            <li class="confirmation_summary_ps">Summary of your travel information :</li>
+    </section>
+    <section> 
+   <table class="table table-striped">
+        <thead class="confirmation_summary">    
+         <tr>
+                <th>DESCRIPTION</th>
+                <th>ONWARD TRIP</th>
+                <th>RETURN TRIP</th>
+        </tr>
+       </thead>
+        <tbody>
+           <tr> 
+             <th class="confirmation_travel_head">OPERATOR</th>
+              <td class="confirmation_travel_data">{{onwarddetails[0].operator}}</td> 
+              <td class="confirmation_travel_data">{{returns[0].operator}}</td>    
+           </tr>
+            <tr> 
+              <th class="confirmation_travel_head">SERVICE FROM</th>
+             <td class="confirmation_travel_data">{{onwarddetails[0].floc}}</td>   
+              <td class="confirmation_travel_data">{{returns[0].floc}}</td>   
+           </tr>
+            <tr> 
+             <th class="confirmation_travel_head">SERVICE TO</th>
+              <td class="confirmation_travel_data">{{onwarddetails[0].tloc}}</td>     
+              <td class="confirmation_travel_data">{{returns[0].tloc}}</td>     
+           </tr>
+            <tr> 
+             <th class="confirmation_travel_head">BUS TYPE</th>
+               <td class="confirmation_travel_data">{{onwarddetails[0].type}}</td> 
+               <td class="confirmation_travel_data">{{returns[0].type}}</td>                 
+           </tr>
+            <tr> 
+             <th class="confirmation_travel_head">JOURNEY DATE</th>
+             <td class="confirmation_travel_data">{{onwarddetails[0].journey}} </td>      
+             <td class="confirmation_travel_data">{{returns[0].journey}} </td>               
+           </tr>
+            <tr> 
+             <th class="confirmation_travel_head">TIME OF DEPARTURE</th>
+             <td class="confirmation_travel_data">{{onwarddetails[0].dtime}} </td>      
+             <td class="confirmation_travel_data">{{returns[0].dtime}} </td>               
+           </tr>
+       </tbody>
+   </table>
+    </section>
+<section>
+    <table class="table confirm_seats_bg">
+     <tr> 
+             <th>NO.OF.SEATS:</th>
+             <td>{{onwarddetails[0].seats}}</td>
+     </tr>
+ </table>
+</section>
+<section>
+    <table class="table confirm_seats_bg">
+     <tr> 
+             <th>ONWARD TRIP SEAT NO/S:</th>
+             <td>{{onwarddetails[0].seatno}}</td>
+     </tr>
+ </table>
+</section>
+<section>
+    <table class="table confirm_seats_bg">
+     <tr> 
+             <th>RETURN TRIP SEAT NO/S:</th>
+             <td>{{returns[0].seatno}}</td>
+     </tr>
+ </table>
+</section>
+<p class="confirmation_summary_ps">Passenger Information:</p>
+<section>
+<table class="table table-striped">
+        <thead class="confirmation_travel_head">    
+         <tr>
+                <th>PASSENGER NAME</th>
+                <th>BOOKING STATUS</th>
+          </tr>
+       </thead>
+        <tbody>
+           <tr> 
+              <td class="confirmation_travel_data">{{returns[0].passenger}}</td> 
+              <td class="confirmation_travel_data">CONFIRMED</td>    
+           </tr>
+        </tbody>
+</table>
+</section>
+   <section class="confirmation_summary">
+            <p>Wishing From Our Heart That You Have a Safe And Wonderful Journey!!</p>
+   </section>
+
+    <a href="#!/cancellation"><button class="button button-block">Cancel Tickets</button></a>
+</section>

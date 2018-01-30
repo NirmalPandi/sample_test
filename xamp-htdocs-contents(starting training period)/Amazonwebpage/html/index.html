@@ -1,0 +1,204 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+      <script src="../lib/jquery-1.7.2.min.js"></script>
+  <script src="../lib/signals.js"></script>
+    <script src="../lib/require.js"></script>
+
+    <script src="../lib/handlebars-1.0.0.beta.6.js"></script>
+    
+    
+    <script src="../js/framework/Class.js"></script>
+    <script src="../js/framework/Base.js"></script>
+    <script src="../js/framework/Widget.js"></script>
+    <script src="../js/framework/TemplateProvider.js"></script>
+    <script src="../js/framework/WidgetWithTemplate.js"></script>
+    <script src="../js/framework/AnimationProvider.js"></script>
+    <script src="../js/framework/NavigationController.js"></script>
+    <script src="../js/framework/NavigationController.js"></script>
+    <script src="../js/Bootstrap.js"></script>
+    <script src="../js/widget/footer.js"></script>
+    <script src="../js/API.js"></script>
+    <script src="../js/listener/HeaderListener.js"></script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i,v;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    v = document.getElementById("myDropdown");
+    a = v.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } 
+    }
+}
+
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<title>My page</title>
+</head>
+<body>
+<div class="top">
+<div id="headericon1"></div><div id="headericon2"></div><form><input type="text" placeholder="Search..." required>
+<input type="button" value="Search"></form> 
+</div>
+<div class="content1">
+<div class="one"><input type="button" class="one" value="Today's Deal"></div>
+<div class="two"><input type="button" class="two" value="AmazonPay"></div>
+<div class="three"><input type="button" class="three" value="Customer Services"></div>
+<div class="dropdown">
+  <img src="../images/images4.jpg" alt="New Launches" width="150" height="40">
+  <div class="dropdown-content">
+    <img src="../images/images4.jpg" alt="New Launches" width="300" height="200">
+    <div class="desc">New Launches</div>
+  </div>
+</div>
+<div class="dropdown1">
+  <img src="../images/images6.jpg" alt="On Streets" width="150" height="40">
+  <div class="dropdown-content1">
+    <img src="../images/images7.jpg" alt="On Streets" width="300" height="200">
+    <div class="desc">New Launches</div>
+  </div>
+</div>
+<div class="dropdown2">
+  <img src="../images/images8.jpg" alt="On Streets" width="150" height="40">
+  <div class="dropdown-content2">
+    <img src="../images/images9.jpg" alt="On Streets" width="300" height="200">
+    <div class="desc">New Launches</div>
+  </div>
+</div>
+<div class="dropdown3">
+  <img src="../images/images10.jpg" alt="On Streets" width="150" height="40">
+  <div class="dropdown-content3">
+    <img src="../images/images11.jpg" alt="On Streets" width="300" height="200">
+    <div class="desc">New Launches</div>
+  </div>
+</div>
+
+
+<div class="dropdown4">
+<button onclick="myFunction()" class="dropbtn">CATEGORY</button>
+  <div id="myDropdown" class="dropdown-content4">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#about">Electronics</a>
+    <a href="#base">Acessory</a>
+    <a href="#blog">Men</a>
+    <a href="#contact">Women</a>
+    <a href="#custom">Gadgets</a>
+    <a href="#support">Kitchen</a>
+    <a href="#tools">Tools</a>
+  </div>
+</div>
+</div>
+<br>
+
+<div class="slide1" style="max-width:500px">
+  <img class="mySlides" src="../images/images13.jpg" style="width:100%">
+  <img class="mySlides" src="../images/images14.jpg" style="width:100%">
+  <img class="mySlides" src="../images/images15.jpg" style="width:100%">
+</div>
+
+
+<script>
+var myIndex1 = 0;
+carousel2();
+
+function carousel2() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex1++;
+    if (myIndex1> x.length) {myIndex1 = 1}    
+    x[myIndex1-1].style.display = "block";  
+    setTimeout(carousel2, 2000); 
+}
+</script>
+
+
+
+<div class="slide2" style="max-width:500px">
+  <img class="mySlides1" src="../images/images16.jpg" style="width:100%">
+  <img class="mySlides1" src="../images/images17.jpg" style="width:100%">
+  <img class="mySlides1" src="../images/images18.jpg" style="width:100%">
+</div>
+
+
+
+<script>
+var Index = 0;
+carousel1();
+
+function carousel1() {
+    var i;
+    var x = document.getElementsByClassName("mySlides1");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    Index++;
+    if (Index > x.length) {Index = 1}    
+    x[Index-1].style.display = "block";  
+    setTimeout(carousel1, 2000); 
+}
+</script>
+
+
+<div class="slide3" style="max-width:400px">
+  <img class="mySlides2" src="../images/images19.jpg" style="width:100%">
+  <img class="mySlides2" src="../images/images20.jpg" style="width:100%">
+  <img class="mySlides2" src="../images/images21.jpg" style="width:100%">
+</div>
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides2");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); 
+}
+</script>
+
+<div class="footer">
+<widget:footer></widget:footer>
+</div>
+
+</body>
+</html>
+ 
